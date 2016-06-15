@@ -39,6 +39,7 @@ namespace rooms
 				}
 
 				Device.BeginInvokeOnMainThread (() => {
+					this.lvRooms.ItemSource = null;
 					this.lvRooms.ItemsSource = roomList;
 				});
 			});

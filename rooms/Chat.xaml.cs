@@ -106,12 +106,16 @@ namespace rooms
 			if (Device.OS == TargetPlatform.iOS) {
 				txtMessage.Focused += (sender, e) => {
 					stackMessage.HeightRequest = 380;
-					lvChatMessages.ScrollTo (chatMessageList [chatMessageList.Count - 1], ScrollToPosition.End, true);
+
+					if (chatMessageList.Count > 0)
+						lvChatMessages.ScrollTo (chatMessageList [chatMessageList.Count - 1], ScrollToPosition.End, true);
 				};
 
 				txtNickname.Focused += (sender, e) => {
 					stackMessage.HeightRequest = 380;
-					lvChatMessages.ScrollTo (chatMessageList [chatMessageList.Count - 1], ScrollToPosition.End, true);
+
+					if (chatMessageList.Count > 0)
+						lvChatMessages.ScrollTo (chatMessageList [chatMessageList.Count - 1], ScrollToPosition.End, true);
 				};
 
 				txtMessage.Unfocused += (sender, e) => {
