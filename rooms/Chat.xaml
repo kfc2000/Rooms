@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="rooms.ChatRoom">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" Spacing="0">
+			<StackLayout Orientation="Horizontal" BackgroundColor="Lime" x:Name="stackTitleBar" Padding="20, 10, 20, 10">
+				<Label Text="" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" x:Name="lblRoomName" HeightRequest="30" TextColor="Black" />
+				<Button x:Name="btnClose" Text="Close" HorizontalOptions="EndAndExpand" HeightRequest="30" FontSize="13" TextColor="Blue" BackgroundColor="Lime"   />
+			</StackLayout>
+
+			<ListView x:Name="lvChatMessages" HasUnevenRows="true" BackgroundColor="White" SeparatorColor="#dddddd">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<ViewCell.View>
+								<StackLayout Orientation="Vertical" Padding="20,10,20,10">
+									<Label Text="{Binding Name}" FontSize="12" TextColor="Black" />
+									<Label Text="{Binding Message}" FontSize="16" TextColor="Black" />
+									<Label Text="{Binding DateTimeFormatted}" FontSize="10" TextColor="Gray" HorizontalOptions="EndAndExpand"  />
+								</StackLayout>
+							</ViewCell.View>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<StackLayout BackgroundColor="#dddddd" x:Name="stackMessage" Padding="20,10,20,10" HeightRequest="120">
+				<Entry x:Name="txtNickname" Placeholder="Your name here..." BackgroundColor="White" TextColor="Black" />
+				<Entry x:Name="txtMessage" Placeholder="Your message here..." BackgroundColor="White" TextColor="Black" />
+				<Button x:Name="btnSend" Text="Send" FontSize="13" BackgroundColor="#dddddd" TextColor="Blue" />
+			</StackLayout>
+		</StackLayout>		
+	</ContentPage.Content>
+</ContentPage>
